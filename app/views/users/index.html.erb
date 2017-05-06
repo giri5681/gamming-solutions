@@ -1,0 +1,28 @@
+<h1> Index Page </h1>
+<table border>
+  <tr> 
+     <th>Photo</th>
+     <th> Name </th>
+     <th> Mail </th>
+     <th> Password </th>
+     <th> Mobile </th>
+     <th> Address </th>
+  </tr>
+  <% @users.each do |i| %>
+   
+  	<tr>
+     <td><%= image_tag i.image.photo(:thumb) unless i.image.blank?%></td>
+  	  <td> <%= i.name %></td> 
+  	  <td> <%= i.mail %></td>
+  	  <td> <%= i.password %></td>
+  	  <td> <%= i.mobile %></td>
+  	  <td> <%= i.address %></td>  
+  	 <td> <%= link_to "edit", edit_user_path(i)%> </td>
+  	 <td> <%= link_to "show", user_path(i)%> </td>
+  	 <td> <%= link_to "delete", i, method: :delete, data: {confirm: "Are you sure!"} %> </td>
+  	</tr>
+  
+  <% end %>
+</table>
+
+<%= link_to "back", new_user_path%>

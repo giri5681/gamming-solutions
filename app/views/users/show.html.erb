@@ -1,0 +1,24 @@
+<h1> Show Page </h1>
+<table>
+  <tr> 
+     <th> Name </th>
+     <th> Mail </th>
+     <th> Password </th>
+     <th> Mobile </th>
+     <th> Address </th>
+  </tr>
+   
+  	<tr>
+  	  <td> <%= @user.name %></td> 
+  	  <td> <%= @user.mail %></td>
+  	  <td> <%= @user.password %></td>
+  	  <td> <%= @user.mobile %></td>
+  	  <td> <%= @user.address %></td>  
+  	  <td> <%= link_to "edit", edit_user_path(@user)%> </td>
+  	  <td> <%= link_to "delete", @user, method: :delete, data: {confirm: "Are you sure!"} %> </td>
+  	 </tr>
+  
+  
+</table>
+
+<%= link_to "New user", new_user_path%>
