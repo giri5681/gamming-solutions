@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'rats/new'
+
+  get 'rats/index'
+
+  get 'rats/edit'
+
+  get 'rats/show'
+
 	namespace :api do 
 		resources :users
 	end
